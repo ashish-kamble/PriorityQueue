@@ -130,51 +130,51 @@ int main()
                 		//Enqueu element to queue
 				printf("->Enter Data :");
 				scanf("%d",&value);
-                		printf("\n->Enter its Priority  :");
+                		printf("->Enter its Priority  :");
                 		scanf("%d",&p);
 				temp_var->temp_data = value;
 				temp_var->temp_priority = p;
-                if(flag  == 1)
-                {
-                    check1 = pthread_create(&thread1, NULL, func_ptr_insert,(void *) &temp_var); 
-                    if(check1 != 0) printf("error : thread1 \n");
-                    flag = 2;
-                    thread_id = 1;
-                }
-                else if(flag == 2)
-                {
-                    check2 = pthread_create(&thread2, NULL, func_ptr_insert,(void *) &temp_var); 
-                    if(check2 != 0) printf("error : thread2 \n");
-                    flag = 1;
-                    thread_id = 2;
-                }
+               			if(flag  == 1)
+         			{
+                    			check1 = pthread_create(&thread1, NULL, func_ptr_insert,(void *) &temp_var); 
+                    			if(check1 != 0) printf("error : thread1 \n");
+                    			flag = 2;
+                    			thread_id = 1;
+                		}
+                		else if(flag == 2)
+                		{
+                    			check2 = pthread_create(&thread2, NULL, func_ptr_insert,(void *) &temp_var); 
+                    			if(check2 != 0) printf("error : thread2 \n");
+                    			flag = 1;
+                    			thread_id = 2;
+                		}
 				break;
 			}
 
 			case 2:
 			{
-                //Dequeue element from queue 
+                		//Dequeue element from queue 
 				printf("->Removed from the queue\n");
-                if(flag == 1)
-                {
-                    check3 = pthread_create(&thread3, NULL, func_ptr_delete,(void *) &temp_var);
-                    if(check3 != 0) printf("error : thread3 \n"); 
-                    flag = 2;
-                    thread_id = 3;   
-                }
-                else if(flag == 2)
-                {
-                    check4 = pthread_create(&thread4, NULL, func_ptr_delete,(void *) &temp_var);
-                    if(check4 != 0) printf("error : thread4 \n");
-                    flag = 1;
-                    thread_id = 4;
-                }
+                		if(flag == 1)
+                		{
+                    			check3 = pthread_create(&thread3, NULL, func_ptr_delete,(void *) &temp_var);
+                    			if(check3 != 0) printf("error : thread3 \n"); 
+                    			flag = 2;
+                    			thread_id = 3;   
+                		}
+                			else if(flag == 2)
+                		{
+                    			check4 = pthread_create(&thread4, NULL, func_ptr_delete,(void *) &temp_var);
+                    			if(check4 != 0) printf("error : thread4 \n");
+                    			flag = 1;
+                   	 		thread_id = 4;
+                		}
 				break;
 			}
 
 			case 3:
 			{
-                //Display the current elements present in Queue
+                		//Display the current elements present in Queue
 				disp();
 				break;
 			}
