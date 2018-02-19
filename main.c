@@ -127,11 +127,11 @@ int main()
 		{
 			case 1:  
 			{
-                //Enqueu element to queue
+                		//Enqueu element to queue
 				printf("->Enter Data :");
 				scanf("%d",&value);
-                printf("->Enter its Priority  :\n");
-                scanf("%d",&p);
+                		printf("\n->Enter its Priority  :");
+                		scanf("%d",&p);
 				temp_var->temp_data = value;
 				temp_var->temp_priority = p;
                 if(flag  == 1)
